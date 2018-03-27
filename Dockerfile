@@ -1,6 +1,6 @@
 FROM narfman0/docker-jenkins-node-android-sdk
 
-ENV ANDROID_PACKAGE "system-images;android-27;google_apis_playstore;x86"
+ENV ANDROID_PACKAGE "system-images;android-25;google_apis;armeabi-v7a"
 ENV ANDROID_SDK_ROOT=$ANDROID_HOME
 ENV PATH $ANDROID_HOME/emulator:$PATH
 
@@ -12,5 +12,5 @@ RUN echo "y" | sdkmanager "emulator" $ANDROID_PACKAGE && \
     chmod -R 777 $ANDROID_HOME
 
 USER jenkins
-RUN echo "no" | avdmanager create avd -f -k $ANDROID_PACKAGE -n test -b google_apis_playstore/x86
-#RUN echo "no" | emulator64-x86 -avd test -noaudio -no-window -gpu off -verbose -qemu -usbdevice tablet -vnc :0
+RUN echo "no" | avdmanager create avd -f -k $ANDROID_PACKAGE -n test -b google_apis/armeabi-v7a
+#RUN echo "no" | emulator64-arm -avd test -noaudio -no-window -ranchu -gpu off -verbose
