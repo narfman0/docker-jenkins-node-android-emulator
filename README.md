@@ -17,7 +17,7 @@ you should have name, secret, and host/ip needed to run:
 
 To build locally, use:
 
-`docker build . -t docker-jenkins-node-android-emulator`
+`docker build . -t narfman0/docker-jenkins-node-android-emulator`
 
 ## License
 
