@@ -13,4 +13,7 @@ RUN echo "y" | sdkmanager "emulator" $ANDROID_PACKAGE && \
 
 USER jenkins
 RUN echo "no" | avdmanager create avd -f -k $ANDROID_PACKAGE -n test -b google_apis/armeabi-v7a
-#RUN echo "no" | emulator64-arm -avd test -noaudio -no-window -ranchu -gpu off -verbose
+
+ADD emulatorEntry.sh /usr/local/bin/emulatorEntry.sh
+
+ENTRYPOINT ["emulatorEntry.sh"]
