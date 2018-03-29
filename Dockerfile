@@ -1,5 +1,8 @@
 FROM narfman0/docker-jenkins-node-android-sdk
 
+# vnc port
+EXPOSE 5900
+
 ENV ANDROID_PACKAGE "system-images;android-25;google_apis;armeabi-v7a"
 ENV ANDROID_SDK_ROOT=$ANDROID_HOME
 ENV PATH $ANDROID_HOME/emulator:$PATH
